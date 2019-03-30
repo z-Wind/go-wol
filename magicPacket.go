@@ -76,8 +76,8 @@ func (mp *MagicPacket) marshal() ([]byte, error) {
 	return buf.Bytes(), nil
 }
 
-// Send MagicPacket
-func (mp *MagicPacket) Send(ip string, port int) error {
+// Send MagicPacket by UDP
+func (mp *MagicPacket) SendUDP(ip string, port int) error {
 	bcastAddr := fmt.Sprintf("%s:%d", ip, port)
 	udpAddr, err := net.ResolveUDPAddr("udp", bcastAddr)
 	if err != nil {

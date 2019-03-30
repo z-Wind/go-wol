@@ -9,7 +9,7 @@ func TestSend(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	err = mp.Send("192.168.1.255", 9)
+	err = mp.SendUDP("192.168.1.255", 9)
 	if err != nil {
 		t.Error(err)
 	}
